@@ -1,0 +1,25 @@
+name: bbchichi-awk
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Keep core versions aligned with the existing 'mg5' conda env when possible
+  - python=3.10.19
+  - numpy=2.2.6
+  - awkward=2.8.11
+  - uproot=5.6.9
+  - root=6.36.06
+  - matplotlib=3.10.8
+  - mplhep=0.4.1
+  - pyyaml=6.0.3
+
+  # Analyzer / plotting stack
+  - pandas
+  - pyarrow
+  - hist
+  - boost-histogram
+  - vector
+
+  # Useful utilities (lightweight)
+  - tqdm
+  - ipykernel

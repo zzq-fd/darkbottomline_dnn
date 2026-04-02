@@ -1,0 +1,32 @@
+name: bbchichi-awk-ml
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Core stack (keep aligned with mg5/mg5-dnn where possible)
+  - python=3.10.19
+  - numpy=2.2.6
+  - awkward=2.8.11
+  - uproot=5.6.9
+  - root=6.36.06
+  - matplotlib=3.10.8
+  - mplhep=0.4.1
+  - pyyaml=6.0.3
+  - pandas=2.3.3
+
+  # Analyzer utilities
+  - pyarrow
+  - hist
+  - boost-histogram
+  - vector
+  - tqdm
+  - ipykernel
+
+  # Classical ML (used by mass_sculpting / some ML_Application scripts)
+  - scikit-learn=1.7.2
+  - scipy=1.15.2
+  - seaborn
+  - xgboost
+
+  # Deep learning (DNN)
+  - pytorch

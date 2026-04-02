@@ -1,0 +1,21 @@
+datasets:
+  "2022":
+    PreEE:
+      raw_path: "data/inputs/2022/PreEE"
+      schema: "schema_v1"
+    PostEE:
+      raw_path: "data/inputs/2022/PostEE"
+      schema: "schema_v1"
+
+  "2023":
+    preBPix:
+      raw_path: "data/inputs/2023/preBPix"
+      schema: "schema_v2"
+    postBPix:
+      raw_path: "data/inputs/2023/postBPix"
+      schema: "schema_v2"
+
+defaults:
+  processed_root: "data/processed"
+  outputs_root: "outputfiles"
+  plots_root: "stack_plots"
