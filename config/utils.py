@@ -9,7 +9,10 @@ from operator import index
 import awkward as ak
 import numpy as np
 import pandas as pd
-from ROOT import TH1F
+try:
+    from ROOT import TH1F  # type: ignore
+except ModuleNotFoundError:
+    TH1F = None
 from array import array
 from vector import awk
 from copy import deepcopy
@@ -21,6 +24,11 @@ def FileToList(filename):
 
 # Take care of variable binning
 def SetHist(HISTNAME, binning):
+    if TH1F is None:
+        raise RuntimeError(
+            "PyROOT (module 'ROOT') is not available. "
+            "Install ROOT/PyROOT or avoid histogram utilities (e.g. run analyzer with --skip-hists)."
+        )
     if len(binning) == 3:
         h = TH1F(HISTNAME, HISTNAME, binning[0], binning[1], binning[2])
     else:
